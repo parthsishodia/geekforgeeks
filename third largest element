@@ -1,0 +1,49 @@
+
+import java.util.Scanner;
+import java.util.*;
+import java.io.*;
+
+class ThirdLargestElement
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t>0)
+		{
+			int n =sc.nextInt();
+			int arr[] = new int[n];
+			for(int i=0;i<n;i++)
+				arr[i] = sc.nextInt();
+			Solution g = new Solution();
+			System.out.println(g.thirdLargest(arr,n));
+		t--;
+		}
+	}
+
+
+class Solution
+{
+    int thirdLargest(int a[], int n)
+    {
+	    if(n<3)
+	    {
+	        return -1;
+	    }
+    else{
+        int temp;
+        for(int i=0;i<3;i++)
+        {
+            for(int x=0;x<n-1;x++)
+            { 
+                if(a[x]>a[x+1])
+                {
+                    temp=a[x];
+                    a[x]=a[x+1];
+                    a[x+1]=temp;
+                }
+    }
+    }return(a[n-3]);
+}
+}
+}
