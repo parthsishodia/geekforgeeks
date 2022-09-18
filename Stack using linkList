@@ -1,0 +1,21 @@
+class MyStack 
+{
+    StackNode top;
+    
+    void push(int a) 
+    {
+       StackNode temp=new StackNode(a);
+       temp.next=top;
+       top=temp;
+    }
+    int pop() 
+    {
+        if(top == null)
+        {
+            return -1;
+        }
+        int a =top.data;
+        top=top.next;
+        return a;
+    }
+}
