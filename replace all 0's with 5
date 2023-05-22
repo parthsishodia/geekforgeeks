@@ -1,0 +1,13 @@
+class GfG {
+    int convertfive(int num) {
+        // Your code here
+         if(num == 0){
+        return 0;
+    }
+    int last_digit = num % 10;
+    if(last_digit == 0){
+        last_digit = 5;
+    }
+    return convertfive(num/10)*10 + last_digit;
+}
+    }
